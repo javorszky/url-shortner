@@ -54,20 +54,7 @@ export default function Home() {
             />
           </div>
         </form>
-        <div>
-          {links &&
-            Object.keys(links).map((short) => {
-              const long = links[short];
-              return (
-                <div key={short}>
-                  <div onClick={() => navigator.clipboard.writeText(short)}>
-                    {`${process.env.NEXT_PUBLIC_HOST}/go/${short}`}
-                  </div>
-                  <div>{long}</div>
-                </div>
-              );
-            })}
-        </div>
+        <div></div>
       </div>
     </div>
   );
