@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 export default function Home() {
   const [longUrl, setLongUrl] = useState('');
-  const [links, setLinks] = useState({});
+  const [links, setLinks] = useState();
   const urlRef = useRef('');
   const handleSubmit = async (e) => {
     e.preventDefault();
