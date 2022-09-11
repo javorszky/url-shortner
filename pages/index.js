@@ -18,7 +18,7 @@ export default function Home() {
     (async () => {
       await refreshLinks();
     })();
-  }, []);
+  });
 
   const refreshLinks = async () => {
     const linksObject = await getLinks();
