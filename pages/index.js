@@ -11,7 +11,7 @@ export default function Home() {
     await axios.post('/api/shorten', { longUrl: longUrl });
 
     urlRef.current.value = '';
-    refreshLinks();
+    await refreshLinks();
   };
 
   useEffect(() => {
