@@ -60,7 +60,7 @@ export default function Home() {
               let long = links[short];
               return (
                 <div key={short}>
-                  <div>{short}</div>
+                  <div>{`${process.env.NEXT_PUBLIC_HOST}/go/${short}`}</div>
                   <div>{long}</div>
                 </div>
               );
