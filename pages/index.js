@@ -15,19 +15,13 @@ export default function Home() {
   };
 
   useEffect(() => {
-    (async () => {
-      await refreshLinks();
-    })();
+    getLinks();
   }, []);
 
-  const refreshLinks = async () => {
-    const linksObject = await getLinks();
-    setLinks(linksObject);
-  };
-
   const getLinks = async () => {
-    const res = await axios.get('/api/links');
-    return res?.data?.links;
+    fetch('https://upstash-edge-functions.netlify.app/test')
+      .then((response) => response.json())
+      .then((json) => setLinks(json));
   };
   return (
     <div className="w-screen h-screen flex justify-center items-center">
