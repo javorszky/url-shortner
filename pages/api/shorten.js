@@ -1,4 +1,10 @@
+import { Redis } from '@upstash/redis';
+
 export default async function handler(req, res) {
+  const redis = new Redis({
+    url: `${process.env.UPSTASH_REDIS_REST_URL}`,
+    token: `${process.env.UPSTASH_REDIS_REST_TOKEN}`,
+  });
   const { longUrl } = req.body;
   if (!longUrl || longUrl.length <= 0) {
     res.status(400).json({ message: 'Error, url is invalif' });
@@ -23,5 +29,5 @@ export default async function handler(req, res) {
   let shortUrl = newSlugJoin;
 
   let data = await redis.hset('links', { [shortUrl]: longUrl });
-  res.status(200).send({ message: 'success' });
+  res.status(200).send({ data });
 }
