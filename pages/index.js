@@ -59,7 +59,7 @@ export default function Home() {
               let long = links[short];
               return (
                 <div key={short}>
-                  <div>{`Short : ${short}`}</div>
+                  <div>{`/api/go/${short}`}</div>
                   <div>{long}</div>
                 </div>
               );
