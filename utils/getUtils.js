@@ -1,4 +1,4 @@
-import { Redis } from '@upstash/redis';
+import { useRedis } from './useRedis';
 
 export const getShort = (longUrl) => {
   let shortEnd = longUrl.split('/');
@@ -22,10 +22,7 @@ export const getShort = (longUrl) => {
 };
 
 export async function getLink(code) {
-  const redis = new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  });
+  const redis = useRedis();
 
   let link = await redis.hget('links', code);
 
