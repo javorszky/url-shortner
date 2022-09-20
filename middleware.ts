@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { getLink } from './utils/getUtils';
 
-export async function middleware(request) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const searchTerms = pathname.split('/');
 
