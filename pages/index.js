@@ -52,8 +52,9 @@ export default function Home() {
               className="border border-black rounded"
             />
           </div>
+          <button type="submit">add short url</button>
         </form>
-        <div>
+        {/* <div>
           {links &&
             Object.keys(links).map((short) => {
               let long = links[short];
@@ -64,7 +65,7 @@ export default function Home() {
                 </div>
               );
             })}
-        </div>
+        </div> */}
       </div>
     </div>
   );
